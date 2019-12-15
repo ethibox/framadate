@@ -86,4 +86,4 @@ php /var/www/framadate/bin/doctrine migrations:migrate --no-interaction -vvv
 # Run apache server
 # chown -R www-data:www-data /var/www/framadate
 source /etc/apache2/envvars
-exec apache2 -D FOREGROUND
+exec "$@"
