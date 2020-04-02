@@ -25,7 +25,7 @@ WORKDIR /var/www/framadate
 # Some Apache and PHP configuration
 RUN if [ "$ENV" = "dev" ] ; then echo Using PHP production mode ; else echo Using PHP development mode && echo "error_reporting = E_ERROR | E_WARNING | E_PARSE\ndisplay_errors = On" > /usr/local/etc/php/conf.d/php.ini ; fi
 
-RUN git clone https://framagit.org/framasoft/framadate/framadate.git /var/www/framadate/
+RUN git clone https://github.com/ethibox/framadate /var/www/framadate/
 
 RUN rm /etc/apache2/sites-enabled/000-default.conf
 EXPOSE 80

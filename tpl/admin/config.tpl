@@ -109,11 +109,11 @@ $config = [
     'use_sendmail' => false,                // use sendmail instead of smtp
     'smtp_options' => [
         'host' => 'SMTP_SERVER',            // SMTP server (you could add many servers (main and backup for example) : use ";" like separator
-        'auth' => false,                    // Enable SMTP authentication
-        'username' => '',                   // SMTP username
-        'password' => '',                   // SMTP password
-        'secure' => '',                     // Enable encryption (false, tls or ssl)
-        'port' => 25,                       // TCP port to connect to
+        'auth' => 'SMTP_AUTH',              // Enable SMTP authentication
+        'username' => 'SMTP_USERNAME',      // SMTP username
+        'password' => 'SMTP_PASSWORD',      // SMTP password
+        'secure' => 'SMTP_SECURE',          // Enable encryption (false, tls or ssl)
+        'port' => 'SMTP_PORT',              // TCP port to connect to
     ],
     /* home */
     'show_what_is_that' => true,            // display "how to use" section

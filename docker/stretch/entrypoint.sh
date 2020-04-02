@@ -39,6 +39,11 @@ if [ ! -f $FRAMADATE_CONFIG ]; then
     sed -i -E "s/'use_smtp' => true,/'use_smtp' => false,/g" $FRAMADATE_CONFIG
   fi
   sed -i -E "s/SMTP_SERVER/${SMTP_SERVER:-localhost}/g" $FRAMADATE_CONFIG
+  sed -i -E "s/SMTP_AUTH/${SMTP_AUTH:-false}/g" $FRAMADATE_CONFIG
+  sed -i -E "s/SMTP_USERNAME/${SMTP_USERNAME}/g" $FRAMADATE_CONFIG
+  sed -i -E "s/SMTP_PASSWORD/${SMTP_PASSWORD}/g" $FRAMADATE_CONFIG
+  sed -i -E "s/SMTP_SECURE/${SMTP_SECURE}/g" $FRAMADATE_CONFIG
+  sed -i -E "s/SMTP_PORT/${SMTP_PORT:-25}/g" $FRAMADATE_CONFIG
   # Framadate internal config
   sed -i -E "s/^(\/\/ )?const TABLENAME_PREFIX( )?=.*;/const TABLENAME_PREFIX = 'fd_';/g" $FRAMADATE_CONFIG
   sed -i -E "s/^(\/\/ )?const MIGRATION_TABLE( )?=.*;/const MIGRATION_TABLE = 'framadate_migration';/g" $FRAMADATE_CONFIG
